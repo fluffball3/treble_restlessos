@@ -298,7 +298,7 @@ jobs:
 
     env:
       GH_TOKEN: ${{ github.token }}
-      DEBUG_BUILD: 1
+      DEBUG_BUILD: ${{ github.event.inputs.debug_build || 'false' }}
       GRAPHENEOS_RELEASE_CHANNEL: ${{ github.event.inputs.release_channel || 'stable' }}
       WEB_DIR: /var/www/build.chrisaw.io
       REPO_PATH: ${{ github.repository }}
